@@ -3,5 +3,5 @@
 const NikoHomeControlPlatform = require('./lib/NikoHomeControlPlatform')
 
 module.exports = function (homebridge) {
-  homebridge.registerPlatform('homebridge-nikohomecontrole', 'NikoHomeControle', NikoHomeControlPlatform, true)
+  homebridge.registerPlatform('homebridge-nhc-1', 'NikoHomeControl', NikoHomeControlPlatform, true)
 }
