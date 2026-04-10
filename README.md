@@ -1,5 +1,5 @@
-# homebridge-nhc
-Homebridge plugin for Niko Home Control
+# homebridge-nhc-1
+Homebridge plugin for Niko Home Control 1
 
 # Install
      npm install -g homebridge-nhc
