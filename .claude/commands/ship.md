@@ -1,1 +1,0 @@
-Run `git status` and `git diff` to review all uncommitted changes. Then propose a concise, descriptive commit message and ask the user to approve or edit it before proceeding. Once approved, stage all modified files, commit with the approved message, and push to the remote. Report the result when done.
