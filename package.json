@@ -1,6 +1,6 @@
 {
   "displayName": "Homebridge NikoHomeControl",
-  "name": "homebridge-nhc-1",
+  "name": "@hmodateresyc/homebridge-nhc-1",
   "version": "1.3.0",
   "description": "Homebridge plugin for Niko Home Control",
   "license": "MIT",
@@ -27,5 +27,8 @@
   },
   "peerDependencies": {
     "homebridge": "^1.6.0 || ^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
