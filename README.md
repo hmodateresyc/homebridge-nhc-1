@@ -1,5 +1,7 @@
 # homebridge-nhc-1
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support%20this%20project-yellow?logo=buy-me-a-coffee)](https://buymeacoffee.com/hmodateresyc)
+
 A [Homebridge](https://homebridge.io) plugin for **Niko Home Control 1** (the first-generation NHC controller). Exposes your lights, dimmers, and blinds to Apple HomeKit via the Home app or Siri.
 
 ## Requirements
