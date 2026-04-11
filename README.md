@@ -1,19 +1,75 @@
 # homebridge-nhc-1
-Homebridge plugin for Niko Home Control 1
 
-# Install
-     npm install -g homebridge-nhc-1
+A [Homebridge](https://homebridge.io) plugin for **Niko Home Control 1** (the first-generation NHC controller). Exposes your lights, dimmers, and blinds to Apple HomeKit via the Home app or Siri.
 
-[Configuration example](config.json)
+## Requirements
 
-# Description
+- Niko Home Control 1 controller on your local network
+- Homebridge v1.6.0 or v2.0.0+
+- Node.js 18, 20, 22, or 24
 
-This plugin load all your configuration from your local server Niko Home Control
+## Installation
 
-It manage `Lights`, `Dimmers` and `Blind`
+Install via the Homebridge UI (search for `homebridge-nhc-1`), or manually:
 
-Blinds have a default time of 30s, this can be overridden for each one in config.
+```
+npm install -g homebridge-nhc-1
+```
 
-It is possible to exclude IDs from accessories for scene by example.
+## Configuration
 
+Add the platform to your Homebridge `config.json`:
 
+```json
+{
+  "platforms": [
+    {
+      "platform": "NikoHomeControl",
+      "name": "NikoHomeControl",
+      "ip": "192.168.1.10"
+    }
+  ]
+}
+```
+
+### Options
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `ip` | string | Yes | IP address of the NHC controller |
+| `exclude` | integer[] | No | Action IDs to hide from HomeKit (e.g. actions used only in scenes) |
+| `time` | object[] | No | Override travel time per blind (see below) |
+
+### Blind travel time
+
+Blinds are controlled by timing: the plugin calculates position by running the motor for a fraction of the total travel time. The default is **30 seconds**. If your blind takes a different amount of time to go from fully open to fully closed, override it per action ID:
+
+```json
+{
+  "platforms": [
+    {
+      "platform": "NikoHomeControl",
+      "name": "NikoHomeControl",
+      "ip": "192.168.1.10",
+      "exclude": [31],
+      "time": [
+        { "id": 2, "time": 20 },
+        { "id": 5, "time": 45 }
+      ]
+    }
+  ]
+}
+```
+
+## Supported devices
+
+| NHC type | HomeKit service |
+|----------|----------------|
+| Light (type 1) | Lightbulb (on/off) |
+| Dimmer (type 2) | Lightbulb (on/off + brightness) |
+| Blind (type 4) | Window Covering (position) |
+
+## Notes
+
+- The NHC controller communicates over TCP port 8000 on your local network. No cloud connection is required.
+- Real-time events from the controller are supported: if you change a light from a physical switch, HomeKit reflects the new state automatically.
