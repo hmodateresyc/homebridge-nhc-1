@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.6.5] - 2026-04-11
+### Added
+- `funding` field in `package.json` for Homebridge UI donate button
+
+## [1.6.4] - 2026-04-11
+### Added
+- Buy Me a Coffee badge in README
+- `FUNDING.yml` for GitHub Sponsor button on repository page
+
+## [1.6.3] - 2026-04-11
+### Changed
+- README rewritten with full configuration docs, options table, supported devices table, and blind travel time explanation
+
+## [1.6.2] - 2026-04-11
+### Changed
+- Added Node.js 24 to supported engine range (`^18.20.4 || ^20.15.1 || ^22.0.0 || ^24.0.0`)
+
+## [1.6.1] - 2026-04-11
+### Security
+- H2: Whitelist allowed event names before emitting — prevents process crash via injected `error` event from malicious TCP payload
+- M1: Validate `id` and `value` in `executeActions` before sending to controller
+- M2: Cap TCP buffer at 64 KB in both request socket and event socket
+- M3: Remove `config.json` from git tracking, add to `.gitignore`
+- M4: Log `err.message` instead of full error object in all `.catch()` handlers
+- L1: Add 10-second connect timeout on event socket to handle stalled connections
+- L2: Reset reconnect state on socket close so re-init starts cleanly
+- L3: Encapsulate module-level globals in `NikoClient` class
+- L4: Fix `http://` → `https://` in `package.json` bugs URL
+
+## [1.6.0] - 2026-04-11
+### Changed
+- Controller state (`id`, `value`, `position`, etc.) moved from accessory object to controller object (SRP)
+- `ACTION_HANDLERS` map replaces switch/case — adding a new device type only requires one new entry (OCP)
+- `updateAccessory()` signature cleaned up, removed unused `action` parameter
+- `changeValue` and `changeTarget` merged into a single method in Blind
+- `PLUGIN_NAME` and `PLATFORM_NAME` defined as named constants
+
 ## [1.5.2] - 2026-04-11
 ### Fixed
 - Connection to Niko controller no longer times out. The controller keeps TCP connections open after responding; we now parse the response as it arrives instead of waiting for the connection to close.
