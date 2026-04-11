@@ -43,7 +43,8 @@
               "title": "Travel Time (seconds)",
               "type": "integer",
               "required": true,
-              "description": "Time in seconds for the blind to travel from fully open to fully closed. Default is 30."
+              "default": 30,
+              "description": "Time in seconds for the blind to travel from fully open to fully closed."
             }
           }
         },
