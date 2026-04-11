@@ -17,7 +17,7 @@
     "url": "git://github.com/hmodateresyc/homebridge-nhc-1.git"
   },
   "bugs": {
-    "url": "http://github.com/hmodateresyc/homebridge-nhc-1/issues"
+    "url": "https://github.com/hmodateresyc/homebridge-nhc-1/issues"
   },
   "engines": {
     "node": "^18.20.4 || ^20.15.1 || ^22",
