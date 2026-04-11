@@ -4,18 +4,17 @@
   "singular": true,
   "schema": {
     "type": "object",
+    "required": ["name", "ip"],
     "properties": {
       "name": {
         "title": "Name",
         "type": "string",
-        "default": "NikoHomeControl",
-        "required": true
+        "default": "NikoHomeControl"
       },
       "ip": {
         "title": "IP Address",
         "type": "string",
         "format": "ipv4",
-        "required": true,
         "description": "IP address of the Niko Home Control controller"
       },
       "exclude": {
@@ -33,16 +32,15 @@
         "items": {
           "title": "Blind",
           "type": "object",
+          "required": ["id", "time"],
           "properties": {
             "id": {
               "title": "Action ID",
-              "type": "integer",
-              "required": true
+              "type": "integer"
             },
             "time": {
               "title": "Travel Time (seconds)",
               "type": "integer",
-              "required": true,
               "default": 30,
               "description": "Time in seconds for the blind to travel from fully open to fully closed."
             }
