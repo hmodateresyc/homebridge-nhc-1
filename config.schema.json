@@ -1,0 +1,54 @@
+{
+  "pluginAlias": "NikoHomeControl",
+  "pluginType": "platform",
+  "singular": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "NikoHomeControl",
+        "required": true
+      },
+      "ip": {
+        "title": "IP Address",
+        "type": "string",
+        "format": "ipv4",
+        "required": true,
+        "description": "IP address of the Niko Home Control controller"
+      },
+      "exclude": {
+        "title": "Excluded Actions",
+        "type": "array",
+        "items": {
+          "title": "Action ID",
+          "type": "integer"
+        },
+        "description": "Action IDs to exclude from Homebridge"
+      },
+      "time": {
+        "title": "Blind Travel Times",
+        "type": "array",
+        "items": {
+          "title": "Blind",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Action ID",
+              "type": "integer",
+              "required": true
+            },
+            "time": {
+              "title": "Travel Time (seconds)",
+              "type": "integer",
+              "required": true,
+              "description": "Time in seconds for the blind to travel from fully open to fully closed. Default is 30."
+            }
+          }
+        },
+        "description": "Override the default 30-second travel time for specific blinds"
+      }
+    }
+  }
+}
