@@ -47,6 +47,12 @@
           }
         },
         "description": "Override the default 30-second travel time for specific blinds"
+      },
+      "debug": {
+        "title": "Debug Logging",
+        "type": "boolean",
+        "default": false,
+        "description": "Log all raw messages from the Niko controller to the Homebridge log. Useful for troubleshooting. Disable when not needed."
       }
     }
   }
