@@ -2,6 +2,8 @@
   "pluginAlias": "NikoHomeControl",
   "pluginType": "platform",
   "singular": true,
+  "headerDisplay": "Configure your Niko Home Control system. Enter the IP address of your Niko Home Control controller. See the [README](https://github.com/hmodateresyc/homebridge-nhc-1#readme) for full documentation.",
+  "footerDisplay": "For help and support, visit the [GitHub repository](https://github.com/hmodateresyc/homebridge-nhc-1).",
   "schema": {
     "type": "object",
     "required": ["name", "ip"],

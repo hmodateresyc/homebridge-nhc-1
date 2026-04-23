@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge NikoHomeControl",
   "name": "homebridge-nhc-1",
-  "version": "1.6.15",
+  "version": "1.6.16",
   "author": "hmodateresyc",
   "description": "Homebridge plugin for Niko Home Control",
   "license": "MIT",
