@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: '22'
       - run: npm install -g npm@latest
-      - run: npm publish --provenance
-        env:
-          NODE_AUTH_TOKEN: ''
+      - uses: npm/publish@v2
+        with:
+          provenance: true
