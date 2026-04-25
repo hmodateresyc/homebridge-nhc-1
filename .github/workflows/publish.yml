@@ -16,6 +16,4 @@ jobs:
         with:
           node-version: '22'
       - run: npm install -g npm@latest
-      - uses: npm/publish@v2
-        with:
-          provenance: true
+      - run: npm publish --provenance
